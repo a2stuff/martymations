@@ -43,7 +43,7 @@ The RLE compression is specific to this screen format. Rather than progressing t
          row_ptr[column] = data_byte()
 ```
 
-The first data byte in the stream is read byt not used. Then as each new data byte is read from the stream it is compared with the previous data byte read. If it is the same, the following byte is the run length.
+The first data byte in the stream is read but not used. Then as each new data byte is read from the stream it is compared with the previous data byte read. If it is the same, the following byte is the run length.
 
 The initialization routine at $8500 calls a decompression routine at $8800 twice. The first time to decompress the data from $4000 (`PICnA`) to $2000 (the first high-resolution graphics page), and the second time to decompress the data from $6000 (`PICnB`) to $4000 (the second graphics page).
 
