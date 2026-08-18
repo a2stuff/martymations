@@ -51,7 +51,7 @@ The decompression routine is configurable with a table of two-byte operations to
 
 ## Animation
 
-The actual color cycling animation is done by showing one of the graphics pages, then operating on the other. It loops over every other row of the display memory, and for each byte value uses it as n index in a lookup table and replaces it with the result. Even and odd bytes on each row are handled using separate tables, because (as noted above) they encoding color patterns differently. Once each byte on every other row has been updated, the updated page is shown and the process repeats on the other page.
+The actual color cycling animation is done by showing one of the graphics pages, then operating on the other. It loops over every other row of the display memory, and for each byte value uses it as an index in a lookup table and replaces it with the result. Even and odd bytes on each row are handled using separate tables, because (as noted above) they encoding color patterns differently. Once each byte on every other row has been updated, the updated page is shown and the process repeats on the other page.
 
 The animation tables are not part of the image files, so they are the same for all Martymations. The tables encode color cycles:
 
