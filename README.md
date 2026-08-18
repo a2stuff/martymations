@@ -33,7 +33,7 @@ The two files (`PICnA` and `PICnB`) are RLE-compressed Apple II high-resolution 
 
 At a coarse level, the Apple II high-resolution graphics screens are made up of 192 rows, with each row comprising 40 bytes, or columns. The bits of each byte create a color pattern in a notoriously complex mechanism, with even and odd bytes within each row behaving differently. In the Apple II's RAM, the first 40 bytes of screen memory represent the first row of the display. But then the next 40 bytes are the 65th row of the screen. Then the next 40 bytes are the 129th row of the screen. Then 8 bytes are skipped. The next 40 bytes jump back up to the 9th row, then the 73rd row, then the 137th row. Then 8 bytes are again skipped. Eventually this loops back to pick up the 2nd, 66th, and 130th row, and so on.
 
-The RLE compression is specific to this screen format. Rather than progressing through memory, which due to the strange layout is not amenable to memory-ordered run lengths, it follows the screen layout and works column by column. Further, because the animation (see below) only animates every other row, first half of of the rows on the display are compressed, then the other half. In pseudocode:
+The RLE compression is specific to this screen format. Rather than progressing through memory, which due to the strange layout is not amenable to memory-ordered run lengths, it follows the screen layout and works column by column. Further, because the animation (see below) only animates every other row, first half of the rows on the display are compressed, then the other half. In pseudocode:
 
 ```
    for offset = 1 to 0 step -1
